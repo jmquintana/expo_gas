@@ -3,38 +3,30 @@ import axios from "axios";
 import config from "../config/config.js";
 
 class GasTenderService {
+	constructor() {}
+
 	async getGasTenders() {
-		const gasTenders = await gasTenderRepository.getGasTenders();
+		const gasTenders = await gasTenderRepository.getAll();
 		return gasTenders;
 	}
 
 	async getGasTender(id) {
-		const gasTender = await gasTenderRepository.getGasTender(id);
-		return gasTender;
-	}
-
-	async getGasTenderByDate(date) {
-		const gasTender = await gasTenderRepository.getGasTenderByDate(date);
+		const gasTender = await gasTenderRepository.getById(id);
 		return gasTender;
 	}
 
 	async createGasTender(gasTender) {
-		const createdGasTender = await gasTenderRepository.createGasTender(
-			gasTender
-		);
+		const createdGasTender = await gasTenderRepository.create(gasTender);
 		return createdGasTender;
 	}
 
 	async updateGasTender(id, gasTender) {
-		const updatedGasTender = await gasTenderRepository.updateGasTender(
-			id,
-			gasTender
-		);
+		const updatedGasTender = await gasTenderRepository.update(id, gasTender);
 		return updatedGasTender;
 	}
 
 	async deleteGasTender(id) {
-		const deletedGasTender = await gasTenderRepository.deleteGasTender(id);
+		const deletedGasTender = await gasTenderRepository.delete(id);
 		return deletedGasTender;
 	}
 
