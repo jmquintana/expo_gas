@@ -1,7 +1,7 @@
 import { gasTenderService } from "../services/index.js";
 import { mainService } from "../services/index.js";
 
-export async function getGasTenders() {
+export async function getGasTenders(req, res) {
 	try {
 		const gasTenders = await gasTenderService.getGasTenders();
 		return res.status(200).json({

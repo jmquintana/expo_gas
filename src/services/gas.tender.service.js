@@ -15,7 +15,7 @@ class GasTenderService {
 		return gasTender;
 	}
 
-	async createGasTender(gasTender) {
+	async saveGasTender(gasTender) {
 		const createdGasTender = await gasTenderRepository.create(gasTender);
 		return createdGasTender;
 	}

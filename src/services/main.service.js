@@ -7,8 +7,6 @@ class MainService {
 		const previous = await gasTenderService.getGasTenders();
 		const latest = await gasTenderService.getLatestGasTenders();
 		let newGasTenders = [];
-		console.log({ previous });
-		console.log(latest[0]);
 
 		if (true) {
 			const previousGasTenders = previous;
@@ -27,6 +25,12 @@ class MainService {
 					}
 				});
 			}
+		}
+
+		if (newGasTenders.length > 0) {
+			newGasTenders.forEach(async (gasTender) => {
+				await gasTenderService.saveGasTender(gasTender);
+			});
 		}
 
 		return newGasTenders;
