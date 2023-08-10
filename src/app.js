@@ -1,5 +1,5 @@
 import express from "express";
-import MongoStore from "connect-mongo";
+// import MongoStore from "connect-mongo";
 import database from "./db.js";
 import routerAPI from "./routes/routes.js";
 import __dirname from "./utils.js";
